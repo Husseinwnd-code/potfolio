@@ -3,12 +3,22 @@ import tka from "./assets/tka.png";
 import cannakunst from "./assets/cannakunst.png";
 import oliveOil from "./assets/olive-oil.png";
 
+const profileImage = {
+  src: hussein,
+  width: 1024,
+  height: 1536,
+};
+
 export default function Portfolio() {
   const projects = [
     {
       title: "TKA Werkstatt",
       category: "Business Website / Dashboard",
-      image: tka,
+      image: {
+        src: tka,
+        width: 1909,
+        height: 903,
+      },
       description:
         "Responsive workshop website with dashboard and appointment management built using React and Supabase.",
       tech: ["React", "Supabase", "Vite", "CSS"],
@@ -18,7 +28,11 @@ export default function Portfolio() {
     {
       title: "Cannakunst Shop",
       category: "Shop Website",
-      image: cannakunst,
+      image: {
+        src: cannakunst,
+        width: 1903,
+        height: 898,
+      },
       description:
         "Modern shop website built as a real-world web project with product presentation, responsive layout, and deployment on Vercel.",
       tech: ["React", "Vite", "CSS", "Vercel"],
@@ -28,7 +42,11 @@ export default function Portfolio() {
     {
       title: "Olive Oil Website",
       category: "Product Landing Page",
-      image: oliveOil,
+      image: {
+        src: oliveOil,
+        width: 939,
+        height: 946,
+      },
       description:
         "Clean product/business landing page for an olive oil brand, focused on modern layout, responsive design, and product presentation.",
       tech: ["HTML", "CSS"],
@@ -155,8 +173,12 @@ export default function Portfolio() {
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
               <img
-                src={hussein}
+                src={profileImage.src}
                 alt="Hussein Ali"
+                width={profileImage.width}
+                height={profileImage.height}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105"
               />
 
@@ -265,8 +287,12 @@ export default function Portfolio() {
             >
               <div className="relative min-h-[280px] overflow-hidden">
                 <img
-                  src={project.image}
+                  src={project.image.src}
                   alt={project.title}
+                  width={project.image.width}
+                  height={project.image.height}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
 
