@@ -15,10 +15,10 @@ export default function Portfolio() {
       title: "TKA Werkstatt",
       category: "Business Website / Dashboard",
       image: {
-        src: tka,
-        width: 1909,
-        height: 903,
-      },
+  src: "/cannakunst.png",
+  width: 1903,
+  height: 898,
+},
       description:
         "Responsive workshop website with dashboard and appointment management built using React and Supabase.",
       tech: ["React", "Supabase", "Vite", "CSS"],
