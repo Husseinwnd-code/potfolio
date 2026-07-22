@@ -3,6 +3,14 @@ import hussein from "./assets/hussein.png";
 export default function Portfolio() {
   const projects = [
     {
+      title: "Drakaryx",
+      category: "Premium Multilingual Landing Page",
+      description:
+        "Premium multilingual landing page built with React, Vite and Tailwind CSS, featuring a modern responsive interface and polished visual presentation.",
+      tech: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
+      github: "https://github.com/Husseinwnd-code/Drakaryx",
+    },
+    {
       title: "TKA Werkstatt",
       category: "Business Website / Dashboard",
       description:
@@ -187,7 +195,7 @@ export default function Portfolio() {
 
             <div className="grid grid-cols-2 gap-5">
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
-                <p className="text-5xl font-black">3</p>
+                <p className="text-5xl font-black">4</p>
                 <p className="mt-2 text-sm text-zinc-400">
                   Portfolio Projects
                 </p>
@@ -294,14 +302,16 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:bg-orange-500"
-                  >
-                    Live Demo ↗
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:bg-orange-500"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
 
                   <a
                     href={project.github}
